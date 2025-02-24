@@ -13,7 +13,7 @@ void* thread_1(void* arg) {
     pthread_mutex_lock(&lock);
 
     shared_data = 42;  // This is to write the data into shared variable
-    printf("Thread 1: Data written to shared_data = %d\n", shared_data);
+    printf("Thread 1: Data written to shared data = %d\n", shared_data);
 
     // This is to unlock mutex after modifying shared variable
     pthread_mutex_unlock(&lock);
@@ -25,7 +25,7 @@ void* thread_2(void* arg) {
     // This is to lock mutex before reading the shared variable
     pthread_mutex_lock(&lock);
 
-    printf("Thread 2: Data read from shared_data = %d\n", shared_data);
+    printf("Thread 2: Data read from shared data = %d\n", shared_data);
 
     // This is to unlock mutex after reading the shared variable
     pthread_mutex_unlock(&lock);
